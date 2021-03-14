@@ -1,1 +1,1 @@
-# CSES-Solutions
+C++ solutions to problemset of CSES
