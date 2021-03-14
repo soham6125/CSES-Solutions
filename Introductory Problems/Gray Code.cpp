@@ -31,14 +31,19 @@ vector<string> gray_code(int n)
   if(n==1) return {"0","1"};
   vector<string> tmp = gray_code(n-1);
   vector<string> ans;
+  vector<string> ans1;
+  vector<string> ans2;
   for(int i=0;i<tmp.size();i++)
   {
-    ans.pb('0'+tmp[i]);
+    ans1.pb('0'+tmp[i]);
   }
   for(int i=0;i<tmp.size();i++)
   {
-    ans.pb('1'+tmp[i]);
+    ans2.pb('1'+tmp[i]);
   }
+  reverse(all(ans2));
+  ans = ans1;
+  for(auto x:ans2) ans.pb(x);
   return ans;
 }
 
